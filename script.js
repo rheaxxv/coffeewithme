@@ -112,10 +112,6 @@ function handleNoClick() {
       const minNoSize = window.matchMedia('(max-width: 420px)').matches ? 12 : 10
       noBtn.style.fontSize = `${Math.max(noSize * 0.9, minNoSize)}px`
 
-    // On phones, move AFTER the tap is counted
-    if (runawayEnabled && window.matchMedia('(pointer: coarse)').matches) {
-    setTimeout(runAway, 120)
-}
 }
 
     // Shrink No button to contrast
