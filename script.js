@@ -116,6 +116,11 @@ function handleNoClick() {
     if (runawayEnabled && window.matchMedia('(pointer: coarse)').matches) {
     setTimeout(runAway, 120)
 }
+
+    // On phones, move AFTER the tap is counted
+    if (runawayEnabled && window.matchMedia('(pointer: coarse)').matches) {
+    setTimeout(runAway, 120)
+}
 }
 
     // Shrink No button to contrast
