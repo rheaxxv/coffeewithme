@@ -204,3 +204,75 @@ h1 {
     width: 260px;
     height: 260px;
 }
+
+/* ---------- Mobile-friendly overrides (ADD AT BOTTOM) ---------- */
+
+/* Use stable viewport on mobile + allow vertical scroll if needed */
+body{
+  min-height: 100svh;
+  padding: 16px;
+  overflow-x: hidden;
+  overflow-y: auto; /* was hidden -> causes cut off on phones */
+}
+
+/* Container should fit screen width */
+.container{
+  width: min(520px, 100%);
+  padding: 28px 16px;
+}
+
+/* Title scales */
+h1{
+  font-size: clamp(28px, 7vw, 38px);
+  margin-bottom: 14px;
+}
+
+/* GIF scales down on phones */
+#cat-gif{
+  width: min(220px, 70vw);
+  height: auto;              /* let it scale naturally */
+  max-height: 40vh;
+}
+
+/* Buttons: nicer wrap + big tap targets */
+.buttons{
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Make buttons easier to tap on mobile */
+#yes-btn, #no-btn{
+  min-height: 48px;          /* recommended tap target */
+}
+
+/* On small phones, stack buttons full width */
+@media (max-width: 420px){
+  .buttons{
+    flex-direction: column;
+    width: 100%;
+  }
+  #yes-btn, #no-btn{
+    width: 100%;
+  }
+
+  /* reduce overly large paddings on small screens */
+  #yes-btn{
+    font-size: 1.3rem;
+    padding: 14px 18px;
+  }
+  #no-btn{
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+}
+
+/* Make the floating hearts animation not too heavy on phones */
+@media (prefers-reduced-motion: reduce){
+  .hearts-bg::before,
+  .hearts-bg::after{
+    animation: none;
+  }
+  h1{
+    animation: none;
+  }
+}
