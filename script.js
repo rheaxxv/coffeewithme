@@ -107,15 +107,10 @@ function handleNoClick() {
     yesBtn.style.padding = `${padY}px ${padX}px`
 
     // Shrink No button to contrast (but don't make it tiny)
-    if (noClickCount >= 2) {
+    if (noClickCount >= 5) {
       const noSize = parseFloat(getComputedStyle(noBtn).fontSize)
       const minNoSize = window.matchMedia('(max-width: 420px)').matches ? 12 : 10
       noBtn.style.fontSize = `${Math.max(noSize * 0.9, minNoSize)}px`
-
-    // On phones, move AFTER the tap is counted
-    if (runawayEnabled && window.matchMedia('(pointer: coarse)').matches) {
-    setTimeout(runAway, 120)
-}
 
     // On phones, move AFTER the tap is counted
     if (runawayEnabled && window.matchMedia('(pointer: coarse)').matches) {
