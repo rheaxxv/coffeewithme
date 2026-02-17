@@ -10,7 +10,6 @@ const gifStages = [
 ]
 
 const noMessages = [
-    "No",
     "Luh? 🤔",
     "Sige na please... 🥺",
     "If you say no, I'll be sad...",
