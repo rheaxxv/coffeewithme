@@ -125,7 +125,6 @@ function swapGif(src) {
 
 function enableRunaway() {
     noBtn.addEventListener('mouseover', runAway)
-    noBtn.addEventListener('touchstart', runAway, { passive: true })
 }
 
 function runAway() {
