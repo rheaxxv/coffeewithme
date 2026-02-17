@@ -88,7 +88,7 @@ function handleNoClick() {
     noClickCount++
 
     // Cycle through guilt-trip messages
-    const msgIndex = Math.min(noClickCount, noMessages.length - 1)
+    const msgIndex = Math.min(noClickCount - 1, noMessages.length - 1)
     noBtn.textContent = noMessages[msgIndex]
 
     // Grow the Yes button (fun but safe)
@@ -121,6 +121,11 @@ function handleNoClick() {
     if (noClickCount >= noMessages.length && !runawayEnabled) {
     enableRunaway()
     runawayEnabled = true
+    }
+    
+    // Mobile: move AFTER tap once runaway is enabled
+    if (runawayEnabled && window.matchMedia('(pointer: coarse)').matches) {
+      setTimeout(runAway, 80)
     }
 }
 
