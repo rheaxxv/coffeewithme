@@ -95,7 +95,7 @@ function handleNoClick() {
     const currentSize = parseFloat(getComputedStyle(yesBtn).fontSize)
 
     // cap the max size so it doesn't blow up the layout on phones
-    const maxYesSize = window.matchMedia('(max-width: 420px)').matches ? 38 : 54
+    const maxYesSize = window.matchMedia('(max-width: 420px)').matches ? 38 : 120
     yesBtn.style.fontSize = `${Math.min(currentSize * 1.25, maxYesSize)}px`
 
     // cap padding too
